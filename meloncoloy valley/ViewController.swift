@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController//, UITableViewDataSource
+{
  
     
     @IBOutlet weak var anacondaHealth: UILabel!
@@ -19,8 +20,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var warriorAttackBC: UILabel!
     @IBOutlet weak var warriorHealthO: UILabel!
     @IBOutlet weak var warriorHealthA: UILabel!
-    @IBOutlet weak var monsterTableView: UITableView!
-    @IBOutlet weak var nameLalbe: UILabel!
+    @IBOutlet weak var tableView: UITableView!
+    
     
     
     
@@ -63,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         var orkHealth = Int(60)
         var orkAttack = Int.random(in:20...30)
         var anacondaWhiteSnakeHealth = Int(80)
-        var anacondaWhiteSnakeAttack = Int.random(in:10...40)
+        var anacondaWhiteSnakeAttack = Int.random(in:20...40)
         
     }
     
@@ -110,23 +111,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        monsterTableView.dataSource = self
+        //tableView.dataSource = self
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return monsterPlayerIndex.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let monsterTableCell = tableView.dequeueReusableCell(withIdentifier: "monsterCell")!
-        let HolderText = monsterPlayerIndex[indexPath.row]
-        
-        monsterTableCell.textLabel?.text = HolderText
-        
-        return monsterTableCell
-    }
     @IBAction func attackKnight(_ sender: Any) {
     
     Ragnar.warriorHealth -= RagnarsEnemys.knightAttack
@@ -167,8 +157,19 @@ class ViewController: UIViewController, UITableViewDataSource {
         anacondaHealth.text = String(RagnarsEnemys.anacondaWhiteSnakeHealth)
     }
     
-
-}
+    /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return monsterPlayerIndex.count
+    }
     
-
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let myCell = tableView.dequeueReusableCell(withIdentifier: "monsterCell")!
+        
+        let text = monsterPlayerIndex[indexPath.row]
+        
+        myCell.textLabel!.text = text
+        
+        return myCell
+    }*/
+ 
+ }
+ 
