@@ -21,6 +21,17 @@ class ViewController: UIViewController//, UITableViewDataSource
     @IBOutlet weak var warriorHealthO: UILabel!
     @IBOutlet weak var warriorHealthA: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var orkHealthbar: UILabel!
+    @IBOutlet weak var greenthingsHealthbar: UILabel!
+    @IBOutlet weak var bigcatHealthBar: UILabel!
+    @IBOutlet weak var barbearallenHealhtbar: UILabel!
+    @IBOutlet weak var magesHealthBar: UILabel!
+    @IBOutlet weak var rougesHealthHealthBarO: UILabel!
+    @IBOutlet weak var rougesHealthBarG: UILabel!
+    @IBOutlet weak var rougesHealthBarBC: UILabel!
+    @IBOutlet weak var rougesHealthBarBBR: UILabel!
+    @IBOutlet weak var rougesHealthBarM: UILabel!
+    
     
     
     
@@ -157,6 +168,47 @@ class ViewController: UIViewController//, UITableViewDataSource
         anacondaHealth.text = String(RagnarsEnemys.anacondaWhiteSnakeHealth)
     }
     
+    @IBAction func orkAttackR(_ sender: Any) {
+        rouge.rougeHealth -= rougesEnemys.orkAttack
+        rougesEnemys.orkHealth -= rouge.rougeAttack
+        rouge.rougeAttack = Int.random(in: 15...50)
+        rougesEnemys.orkAttack = Int.random(in: 10...30)
+        rougesHealthHealthBarO.text = String(rouge.rougeHealth)
+        orkHealthbar.text = String(rougesEnemys.orkHealth)
+    }
+    
+    @IBAction func greenthingAttack(_ sender: Any) {
+        rouge.rougeHealth -= rougesEnemys.greenThingAttack
+        rougesEnemys.greenThingHealth -= rouge.rougeAttack
+        rouge.rougeAttack = Int.random(in: 15...50)
+        rougesEnemys.greenThingAttack = Int.random(in: 1...5)
+        rougesHealthBarG.text = String(rouge.rougeHealth)
+        greenthingsHealthbar.text = String(rougesEnemys.greenThingHealth)    }
+    
+    @IBAction func BigCatAttack(_ sender: Any) {
+        rouge.rougeHealth -= rougesEnemys.bigCatAttack
+        rougesEnemys.bigCatHealth -= rouge.rougeAttack
+        rouge.rougeAttack = Int.random(in: 15...50)
+        rougesEnemys.bigCatAttack = Int.random(in: 15...35)
+        rougesHealthBarBC.text = String(rouge.rougeHealth)
+        bigcatHealthBar.text = String(rougesEnemys.bigCatHealth)
+    }
+    @IBAction func barBearallenAttack(_ sender: Any) {
+        rouge.rougeHealth -= rougesEnemys.barbearallenAttack
+        rougesEnemys.barbearallenHealth -= rouge.rougeAttack
+        rouge.rougeAttack = Int.random(in: 25...40)
+        rougesEnemys.barbearallenAttack = Int.random(in: 15...35)
+        rougesHealthBarBBR.text = String(rouge.rougeHealth)
+        barbearallenHealhtbar.text = String(rougesEnemys.barbearallenHealth)
+    }
+    @IBAction func mageAttack(_ sender: Any) {
+        rouge.rougeHealth -= rougesEnemys.mageAttack
+        rougesEnemys.mageHealth -= rouge.rougeAttack
+        rouge.rougeAttack = Int.random(in: 25...40)
+        rougesEnemys.barbearallenAttack = Int.random(in: 15...25)
+        rougesHealthBarM.text = String(rouge.rougeHealth)
+        magesHealthBar.text = String(rougesEnemys.mageHealth)
+    }
     /*func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return monsterPlayerIndex.count
     }
